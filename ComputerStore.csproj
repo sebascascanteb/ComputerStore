@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0578299F-FDB3-43D6-9888-0F765541CB30}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ComputerStore</RootNamespace>
+    <AssemblyName>ComputerStore</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComputerStoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerStoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\BCCR\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\BLL\BLLComponente.cs" />
+    <Compile Include="Layers\BLL\BLLComponenteApartado.cs" />
+    <Compile Include="Layers\BLL\BLLComputadoraComponente.cs" />
+    <Compile Include="Layers\BLL\BLLComputadora.cs" />
+    <Compile Include="Layers\BLL\BLLFactura.cs" />
+    <Compile Include="Layers\BLL\BLLTipoComponente.cs" />
+    <Compile Include="Layers\BLL\BLLTipoComputadora.cs" />
+    <Compile Include="Layers\BLL\BLLTipoUsuario.cs" />
+    <Compile Include="Layers\BLL\BLLUsuario.cs" />
+    <Compile Include="Layers\DAL\DALComponente.cs" />
+    <Compile Include="Layers\DAL\DALComponenteApartado.cs" />
+    <Compile Include="Layers\DAL\DALComputadora.cs" />
+    <Compile Include="Layers\DAL\DALComputadoraComponente.cs" />
+    <Compile Include="Layers\DAL\DALFactura.cs" />
+    <Compile Include="Layers\DAL\DALTipoComponente.cs" />
+    <Compile Include="Layers\DAL\DALTipoComputadora.cs" />
+    <Compile Include="Layers\DAL\DALTipoUsuario.cs" />
+    <Compile Include="Layers\DAL\DALUsuario.cs" />
+    <Compile Include="Layers\Entities\ComponenteApartado.cs" />
+    <Compile Include="Layers\Entities\ComponenteDTO.cs" />
+    <Compile Include="Layers\Entities\ComputadoraDTO.cs" />
+    <Compile Include="Layers\Entities\ComputadoraComponente.cs" />
+    <Compile Include="Layers\Entities\Factura.cs" />
+    <Compile Include="Layers\Entities\TipoComponente.cs" />
+    <Compile Include="Layers\Entities\TipoComputadora.cs" />
+    <Compile Include="Layers\Entities\TipoUsuario.cs" />
+    <Compile Include="Layers\Entities\UsuarioDTO.cs" />
+    <Compile Include="Layers\Persistencia\Conexion.cs" />
+    <Compile Include="Layers\Persistencia\DataBase.cs" />
+    <Compile Include="Layers\Persistencia\FactoryConexion.cs" />
+    <Compile Include="Layers\Persistencia\FactoryDatabase.cs" />
+    <Compile Include="Layers\Persistencia\IDataBase.cs" />
+    <Compile Include="Layers\Persistencia\SesionIniciada.cs" />
+    <Compile Include="Layers\Service\Dolar.cs" />
+    <Compile Include="Layers\Service\ProvinciaJson.cs" />
+    <Compile Include="Layers\Service\RootProvincia.cs" />
+    <Compile Include="Layers\Service\ServiceBCCR.cs" />
+    <Compile Include="Layers\Service\ServiceUbicaciones.cs" />
+    <Compile Include="Layers\UI\frmApartados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmApartados.Designer.cs">
+      <DependentUpon>frmApartados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoApartado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoApartado.Designer.cs">
+      <DependentUpon>frmMantenimientoApartado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoComponente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoComponente.Designer.cs">
+      <DependentUpon>frmMantenimientoComponente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoComputadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoComputadora.Designer.cs">
+      <DependentUpon>frmMantenimientoComputadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmMantenimientoUsuario.Designer.cs">
+      <DependentUpon>frmMantenimientoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\DataSetParaFacturacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetParaFacturacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\DataSetReporteComponente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReporteComponente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\DataSetReporteFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReporteFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\DataSetReporteUsuario.cs">
+      <DependentUpon>DataSetReporteUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\DataSetReporteUsuario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReporteUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteComponentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteComponentes.Designer.cs">
+      <DependentUpon>frmReporteComponentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteFactura.Designer.cs">
+      <DependentUpon>frmReporteFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteParaFacturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteParaFacturacion.Designer.cs">
+      <DependentUpon>frmReporteParaFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\FrmReportes\frmReporteUsuario.Designer.cs">
+      <DependentUpon>frmReporteUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmStore.Designer.cs">
+      <DependentUpon>frmStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\UI\frmStoreCustom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layers\UI\frmStoreCustom.Designer.cs">
+      <DependentUpon>frmStoreCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\Util\JSONGenericObject.cs" />
+    <Compile Include="Layers\Util\QRGenerator.cs" />
+    <Compile Include="Layers\Util\Utilitarios.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Layers\UI\frmApartados.resx">
+      <DependentUpon>frmApartados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmMantenimientoApartado.resx">
+      <DependentUpon>frmMantenimientoApartado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmMantenimientoComponente.resx">
+      <DependentUpon>frmMantenimientoComponente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmMantenimientoComputadora.resx">
+      <DependentUpon>frmMantenimientoComputadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmMantenimientoUsuario.resx">
+      <DependentUpon>frmMantenimientoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmReportes\frmReporteComponentes.resx">
+      <DependentUpon>frmReporteComponentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmReportes\frmReporteFactura.resx">
+      <DependentUpon>frmReporteFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmReportes\frmReporteParaFacturacion.resx">
+      <DependentUpon>frmReporteParaFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmReportes\frmReporteUsuario.resx">
+      <DependentUpon>frmReporteUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\FrmReportes\ReportComponente.rdlc" />
+    <EmbeddedResource Include="Layers\UI\FrmReportes\ReportFactura.rdlc" />
+    <EmbeddedResource Include="Layers\UI\FrmReportes\ReportParaFacturacion.rdlc" />
+    <EmbeddedResource Include="Layers\UI\FrmReportes\ReportUsuario.rdlc" />
+    <EmbeddedResource Include="Layers\UI\frmStore.resx">
+      <DependentUpon>frmStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layers\UI\frmStoreCustom.resx">
+      <DependentUpon>frmStoreCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Layers\UI\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ComputerStoreDataSet.xsc">
+      <DependentUpon>ComputerStoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ComputerStoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ComputerStoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComputerStoreDataSet.xss">
+      <DependentUpon>ComputerStoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Connected Services\BCCR\wsindicadoreseconomicos.wsdl" />
+    <None Include="Layers\UI\FrmReportes\DataSetParaFacturacion.xsc">
+      <DependentUpon>DataSetParaFacturacion.xsd</DependentUpon>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetParaFacturacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetParaFacturacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetParaFacturacion.xss">
+      <DependentUpon>DataSetParaFacturacion.xsd</DependentUpon>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteComponente.xsc">
+      <DependentUpon>DataSetReporteComponente.xsd</DependentUpon>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteComponente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReporteComponente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteComponente.xss">
+      <DependentUpon>DataSetReporteComponente.xsd</DependentUpon>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteFactura.xsc">
+      <DependentUpon>DataSetReporteFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReporteFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteFactura.xss">
+      <DependentUpon>DataSetReporteFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteUsuario.xsc">
+      <DependentUpon>DataSetReporteUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteUsuario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReporteUsuario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Layers\UI\FrmReportes\DataSetReporteUsuario.xss">
+      <DependentUpon>DataSetReporteUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Layers\Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24365372_6898823res.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fComponentesResized.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hardwareicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\case.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cpu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gpu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motherboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\almacenamiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\BCCR\wsindicadoreseconomicos.disco" />
+    <None Include="Connected Services\BCCR\configuration91.svcinfo" />
+    <None Include="Connected Services\BCCR\configuration.svcinfo" />
+    <None Include="Connected Services\BCCR\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\psu.png" />
+    <None Include="Resources\cpu1.png" />
+    <None Include="Resources\reloj.png" />
+    <None Include="Resources\user32.png" />
+    <None Include="Resources\l1asus-x515ma-br423-intel-n4020-4-gb.jpg" />
+    <None Include="Resources\l2msi-gf63-thin-12ve-066us-i7-12650h-16gb-rtx-4050-144hz.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\BCCR\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
